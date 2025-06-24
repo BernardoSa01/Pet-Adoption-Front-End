@@ -1,8 +1,10 @@
 # 🐾 Projeto Pet Adoption - Front-end
 
-<p align="center"> Este é o repositório da aplicação **Front-end** do projeto "**Pet Adoption**", desenvolvido como o Projeto MVP (Minimum Viable Product) da pós-graduação em **Desenvolvimento Full Stack pela PUC-Rio**.</p>
+<p align="center"> Este é o repositório da aplicação Front-end do projeto "Pet Adoption", desenvolvido como o Projeto MVP (Minimum Viable Product) da pós-graduação em Desenvolvimento Full Stack pela PUC-Rio.</p>
 
-## 🚀 Sobre o projeto
+Este é o repositório da aplicação **Front-end** do projeto "**Pet Adoption**", desenvolvido como o **Projeto MVP (Minimum Viable Project)** da pós-graduação em Desenvolvimento Full Stack pela PUC-Rio.
+
+## 🚀 Sobre a aplicação
 O sistema tem como objetivo cadastrar pets disponíveis para adoção, permitindo visualizar as informações, e realizar a inclusão e remoção de registros. Esta é uma aplicação web desenvolvida com **HTML, CSS e JavaScript (Vanilla JS)**, que se comunica com uma API RESTful criada em Python (repositório back-end).
 
 ## 🎯 Funcionalidades (🚧 Em desenvolvimento)
