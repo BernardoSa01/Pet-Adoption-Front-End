@@ -1,0 +1,203 @@
+/* Reset padrão */
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #282828;
+  min-height: 100vh;
+  color: white;
+}
+
+.section {
+  transition: all 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Nav */
+nav {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 60px;
+  margin-left: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+nav img {
+  margin-top: 8px;
+}
+
+nav h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+nav a:hover {
+  border-bottom: 2px solid #ffffff;
+}
+
+main, section {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+/* Home */
+#home h2 {
+  font-size: 50px;
+  margin-left: -150px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+#home p {
+  font-size: 20px;
+  margin-left: -100px;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 50%;
+  margin-left: -50px;
+}
+
+#cadastrar h2 {
+  margin-bottom: 30px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input, form textarea {
+  padding: 10px;
+  border: 1px solid #AAA;
+  border-radius: 4px;
+  width: 60%;
+}
+
+form textarea {
+  margin-bottom: 30px;
+}
+
+form button {
+  padding: 10px;
+  width: 60%;
+  background-color: #2ECC71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #27AE60;
+}
+
+/* Pesquisa por nome */
+#listar {
+  margin-left: 30px;
+}
+
+#listar h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.areaDeBusca {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.areaDeBusca label {
+  font-weight: bold;
+}
+
+.areaDeBusca input {
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 250px;
+  border: 1px solid #AAA;
+  outline: none;
+}
+
+.areaDeBusca input:focus {
+  border-color: #2ECC71;
+}
+
+.areaDeBusca button {
+  padding: 8px 16px;
+  background-color: #2ECC71;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.areaDeBusca button:hover {
+  background-color: #27AE60;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #282828;
+  text-align: left;
+}
+
+th {
+  /*background-color: rgb(225, 222, 199);*/
+  background-color: #F9F9F9;
+  color: #282828;
+}
+
+td {
+  background-color: #F9F9F9;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .container {
+    margin: 10px;
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}
