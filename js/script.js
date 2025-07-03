@@ -1,3 +1,7 @@
+/* ====== Global Configurations ====== */
+// Criando uma variável global para URL base do projeto
+const API_URL = 'http://localhost:5001'
+
 /* ==== Screen manipulation ==== */
 
 // Função para mostrar apenas a 'section' selecionada
@@ -62,7 +66,7 @@ function registerPet() {
     }
 
   // Usando o fetch para conexão com o back-end
-  fetch('http://localhost:5000/registerPets', {
+  fetch(`${API_URL}/pet`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -71,7 +75,7 @@ function registerPet() {
       nome: nomeInput.value,
       especie: especieInput.value,
       raca: racaInput.value,
-      idade: idadeInput.value,
+      idade: Number(idadeInput.value),
       sexo: sexoInput.value,
       descricao: descricaoInput.value   
     })
@@ -97,12 +101,12 @@ function listPets() {
   // Limpando o conteúdo atual da tabela
   petsTable.innerHTML = ''
 
-  fetch('http://localhost:5000/listPets', {
+  fetch(`${API_URL}/pets`, {
     method: 'GET'
   })
   .then(response => response.json())
   .then(data => {
-    data.forEach(pet => {
+    data.pets.forEach(pet => {
       // Para cada pet, crie uma nova linha na tabela
       const row = document.createElement('tr')
 
@@ -130,7 +134,6 @@ function listPets() {
 
 // Função de busca para encontrar um pet específico, tendo o nome como parâmetro de pesquisa
 function searchPetByName() {
-  console.log('Função searchPetByName foi chamada');
   const searchPet = document.getElementById('search-name').value
   // Capturando o tbody para inserir os pets listados
   const petsTable = document.getElementById('tabela-pets')
@@ -138,7 +141,7 @@ function searchPetByName() {
   // Limpando a tabela antes de exibir os resultados da pesquisa
   petsTable.innerHTML = ''
 
-  fetch(`http://localhost:5000/searchPet/${searchPet}`, {
+  fetch(`${API_URL}/pet?nome=${searchPet}`, {
     method: 'GET'
   })
   .then(response => response.json())
@@ -150,7 +153,7 @@ function searchPetByName() {
       return
     }
 
-    data.forEach(pet => {
+    data.pets.forEach(pet => {
       // Para cada pet, crie uma nova linha na tabela
       const row = document.createElement('tr')
 
@@ -173,13 +176,20 @@ function searchPetByName() {
     console.error('Erro ao buscar pet', error)
     alert('Ocorreu um erro na busca')
   })
+
+  //  limpa o input após buscar
+  document.getElementById('search-name').value = ''
 }
 
 
 // Função para deletar um pet de acordo com a escolha do usuário
 function deletePet(petId) {
-  fetch(`http://localhost:5000/deletePet/${petId}`, {
-    method: 'DELETE'
+  fetch(`${API_URL}/pet?id=${petId}`, {
+    method: 'DELETE',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ id: petId })
   })
   .then(response => response.json())
   .then(data => {
@@ -212,6 +222,7 @@ window.onload = initializeApp
 function createColumn(content) { 
   const column = document.createElement('td'); 
   column.textContent = content; 
+  column.style.color = '#282828'; 
   return column;
 }
 
@@ -252,3 +263,4 @@ document.getElementById('btn-list').addEventListener('click', () => {
 
 // Adicionando um event listener, para exibir o pet específico com base na pesquisa do usuário
 document.getElementById('btn-search').addEventListener('click', searchPetByName)
+
