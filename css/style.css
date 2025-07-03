@@ -6,10 +6,22 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Variáveis de cores */
+:root {
+  --default-white: #FFFFFF;
+  --background-and-project-base-color: #282828;
+  --button-and-focus-color: #2ECC71;
+  --button-color-hover: #27AE60;
+  --border-color: #AAAAAA;
+  --table-color: #F9F9F9;
+  --table-hover-color: #C8C7C7;
+  --delete-button-color: #FF0000;
+}
+
 body {
-  background-color: #282828;
+  background-color: var(--background-and-project-base-color);
   min-height: 100vh;
-  color: white;
+  color: var(--default-white);
 }
 
 .section {
@@ -20,7 +32,7 @@ body {
   display: none;
 }
 
-/* Nav */
+/*    Nav    */
 nav {
   padding: 20px;
   display: flex;
@@ -41,21 +53,21 @@ nav img {
 
 nav h1 {
   font-size: 2.5rem;
-  color: #ffffff;
+  color: var(--default-white);
 }
 
 nav a {
-  color: #ffffff;
+  color: var(--default-white);
   text-decoration: none;
   font-size: 1.2rem;
   border-bottom: 2px solid transparent;
-  transition: border-color 0.3s ease;
+  transition: all .5s ease;
   cursor: pointer;
   margin-top: 10px;
 }
 
 nav a:hover {
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid var(--default-white);
 }
 
 main, section {
@@ -63,7 +75,7 @@ main, section {
   padding: 20px;
 }
 
-/* Home */
+/*    Início    */
 #home h2 {
   font-size: 50px;
   margin-left: -150px;
@@ -76,7 +88,7 @@ main, section {
   margin-left: -100px;
 }
 
-/* Formulário */
+/*    Formulário    */
 form {
   display: flex;
   flex-direction: column;
@@ -95,7 +107,7 @@ form label {
 
 form input, form textarea {
   padding: 10px;
-  border: 1px solid #AAA;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   width: 60%;
 }
@@ -107,17 +119,20 @@ form textarea {
 form button {
   padding: 10px;
   width: 60%;
-  background-color: #2ECC71;
-  color: white;
+  background-color: var(--button-and-focus-color);
+  color: var(--default-white);
+  font-weight: bold;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s;
 }
 
 form button:hover {
-  background-color: #27AE60;
+  background-color: var(--button-color-hover);
 }
+
+/*    Listar Pets    */
 
 /* Pesquisa por nome */
 #listar {
@@ -138,24 +153,25 @@ form button:hover {
 
 .areaDeBusca label {
   font-weight: bold;
+  font-size: 19px;
 }
 
 .areaDeBusca input {
   border-radius: 4px;
   padding: 8px 12px;
   width: 250px;
-  border: 1px solid #AAA;
+  border: 1px solid var(--border-color);
   outline: none;
 }
 
 .areaDeBusca input:focus {
-  border-color: #2ECC71;
+  border-color: var(--button-and-focus-color);
 }
 
 .areaDeBusca button {
   padding: 8px 16px;
-  background-color: #2ECC71;
-  color: white;
+  background-color: var(--button-and-focus-color);
+  color: var(--default-white);
   font-weight: bold;
   border: none;
   border-radius: 6px;
@@ -164,30 +180,59 @@ form button:hover {
 }
 
 .areaDeBusca button:hover {
-  background-color: #27AE60;
+  background-color: var(--button-color-hover);
 }
 
 /* Tabela */
 table {
   width: 100%;
+  background-color: var(--table-color);
   border-collapse: collapse;
   margin-top: 20px;
 }
 
+th {
+  font-size: 18px;
+}
+
 th, td {
   padding: 10px;
-  border: 1px solid #282828;
+  border: 1px solid var(--background-and-project-base-color);
   text-align: left;
 }
 
 th {
-  /*background-color: rgb(225, 222, 199);*/
-  background-color: #F9F9F9;
-  color: #282828;
+  color: var(--background-and-project-base-color);
+  
 }
 
-td {
-  background-color: #F9F9F9;
+tr:hover {
+    background: var(--table-hover-color);
+    cursor: pointer;
+}
+
+.trash-img {
+  display: block;
+  margin: 0 auto;
+  cursor: default;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+  text-align: center;
+}
+
+.delete-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  color: var(--background-and-project-base-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.delete-button:hover {
+  color: var(--delete-button-color);
+  font-weight: bold;
 }
 
 /* Responsividade */
@@ -201,3 +246,4 @@ td {
     font-size: 2rem;
   }
 }
+
