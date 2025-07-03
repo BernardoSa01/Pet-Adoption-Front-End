@@ -8,14 +8,14 @@
 
 /* Variáveis de cores */
 :root {
-  --default-white: #FFFFFF;
-  --background-and-project-base-color: #282828;
-  --button-and-focus-color: #2ECC71;
-  --button-color-hover: #27AE60;
-  --border-color: #AAAAAA;
-  --table-color: #F9F9F9;
-  --table-hover-color: #C8C7C7;
-  --delete-button-color: #FF0000;
+  --default-white: rgb(255, 255, 255);
+  --background-and-project-base-color: rgb(40, 40, 40);
+  --button-and-focus-color: rgb(46, 204, 113);
+  --button-color-hover: rgb(39, 174, 96);
+  --border-color: rgb(170, 170, 170);
+  --table-color: rgb(249, 249, 249);
+  --table-hover-color: rgb(200, 199, 199);
+  --delete-button-color: rgb(255, 0, 0);
 }
 
 body {
@@ -31,6 +31,7 @@ body {
 .hidden {
   display: none;
 }
+
 
 /*    Nav    */
 nav {
@@ -52,14 +53,14 @@ nav img {
 }
 
 nav h1 {
-  font-size: 2.5rem;
+  font-size: 40px;
   color: var(--default-white);
 }
 
 nav a {
   color: var(--default-white);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 19px;
   border-bottom: 2px solid transparent;
   transition: all .5s ease;
   cursor: pointer;
@@ -87,6 +88,7 @@ main, section {
   font-size: 20px;
   margin-left: -100px;
 }
+
 
 /*    Formulário    */
 form {
@@ -131,6 +133,7 @@ form button {
 form button:hover {
   background-color: var(--button-color-hover);
 }
+
 
 /*    Listar Pets    */
 
@@ -235,6 +238,7 @@ tr:hover {
   font-weight: bold;
 }
 
+
 /* Responsividade */
 @media (max-width: 600px) {
   .container {
@@ -243,7 +247,7 @@ tr:hover {
   }
 
   header h1 {
-    font-size: 2rem;
+    font-size: 32px;
   }
 }
 

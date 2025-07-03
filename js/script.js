@@ -1,6 +1,8 @@
 /* ====== Global Configurations ====== */
+
 // Criando uma variável global para URL base do projeto
 const API_URL = 'http://localhost:5001'
+
 
 /* ==== Screen manipulation ==== */
 
@@ -20,6 +22,7 @@ function showSection(sectionId) {
   // Altera o background conforme a 'section' clicada
   changeBackground(sectionId)
 }
+
 
 // Função para alteração dinâmica no background, de acordo com o botão clicado pelo usuário
 function changeBackground(section) {
@@ -204,11 +207,6 @@ function deletePet(petId) {
 }
 
 
-
-
-
-
-
 /* ==== Helper functions ==== */
 
 // Inicializando a aplicação
@@ -217,6 +215,7 @@ function initializeApp() {
 }
 
 window.onload = initializeApp
+
 
 // Função auxiliar para criação de colunas
 function createColumn(content) { 
@@ -244,7 +243,6 @@ function createDeleteButton(petId) {
   deletionColumn.appendChild(deleteButton)
   return deletionColumn
 }
-
 
 
 /* ==== Event listeners ==== */
