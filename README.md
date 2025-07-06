@@ -2,6 +2,8 @@
 
 <p align="center"> Sistema de cadastro e gerenciamento de pets para adoção. Desenvolvido como o Projeto MVP (Minimum Viable Product) da Pós-graduação em Desenvolvimento Full Stack pela PUC-Rio.</p>
 
+---
+
 ## 🚀 Sobre a aplicação
 <p align="center"> O Pet Adoption é uma aplicação web para cadastro de animais disponíveis para adoção. Com uma interface simples e intuitiva, o sistema oferece funcionalidades como:
 
